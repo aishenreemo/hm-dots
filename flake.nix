@@ -5,21 +5,22 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixgl.url = "github:nix-community/nixGL";
+    nixvim-dots.url = "github:aishenreemo/nixvim-dots";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     }; 
   };
 
-  outputs = { nixpkgs, nixgl, home-manager, ... }:
+  outputs = { nixpkgs, nixgl, home-manager, nixvim-dots, ... }:
     let
     system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-    config = {
-      allowUnfreePredicate = drv: builtins.elem drv.pname [
-      ];
-    };
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfreePredicate = drv: builtins.elem drv.pname [
+        ];
+      };
   };
   custom-pkgs = import ./pkgs { inherit pkgs; };
   in
@@ -41,6 +42,7 @@
       extraSpecialArgs = {
         inherit nixgl;
         inherit custom-pkgs;
+	inherit nixvim-dots;
       };
     };
   };

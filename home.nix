@@ -2,6 +2,7 @@
   pkgs,
   nixgl,
   custom-pkgs,
+  nixvim-dots,
   ...
 }: {
   home.username = "aivan";
@@ -27,6 +28,7 @@
     custom-pkgs.kosefont
     custom-pkgs.lmms-appimage
     custom-pkgs.mako-sound
+    nixvim-dots.packages."x86_64-linux".default
     fontconfig
     noto-fonts
     noto-fonts-cjk-sans
