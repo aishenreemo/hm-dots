@@ -37,6 +37,7 @@
         ./hyprland.nix
         ./wofi.nix
         ./mako.nix
+        ./tmux.nix
       ];
 
       extraSpecialArgs = {

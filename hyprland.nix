@@ -1,30 +1,4 @@
-{ pkgs, config, ... }: {
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-    ];
-    configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
-  };
-
-  systemd.user.services.xdg-desktop-portal-hyprland = {
-    Unit = {
-      Description = "XDG Desktop Portal (Hyprland)";
-      PartOf = [ "graphical-session.target" ];
-      After = [ "graphical-session.target" ];
-    };
-    Service = {
-      ExecStart = "${config.home.homeDirectory}/.nix-profile/bin/nixGL ${pkgs.xdg-desktop-portal-hyprland}/libexec/xdg-desktop-portal-hyprland";
-      Restart = "on-failure";
-      Environment = [
-        "XDG_CURRENT_DESKTOP=Hyprland"
-        "XDG_SESSION_TYPE=wayland"
-      ];
-    };
-    Install.WantedBy = [ "graphical-session.target" ];
-  };
-
+{ ... }: {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     "$terminal" = "nixGL alacritty";
