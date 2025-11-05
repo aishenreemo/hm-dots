@@ -49,10 +49,6 @@
         DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
         SearchBar = "unified"; # alternative: "separate"
 
-        ExtensionSettings = {
-          "*".installation_mode = "blocked";
-        };
-  
         /* ---- PREFERENCES ---- */
         # Check about:config for options.
         Preferences = { 
