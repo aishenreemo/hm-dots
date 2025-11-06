@@ -33,6 +33,7 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     tmux-sessionizer
+    zk
   ];
 
   fonts.fontconfig.enable = true;

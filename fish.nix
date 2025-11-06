@@ -7,6 +7,7 @@
     alias grep='grep --color=auto'
     alias alacritty="nixGL alacritty"
     set -Ux EDITOR nvim
+    set -Ux ZK_NOTEBOOK_DIR $HOME/zk
     set -gx GPG_TTY (tty)
     set -gx PATH /nix/var/nix/profiles/default/bin:$HOME/.local/bin:$HOME/.nix-profile/bin:/usr/bin
     set -gx XDG_CONFIG_HOME $HOME/.config
