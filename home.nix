@@ -27,6 +27,8 @@
     custom-pkgs.kosefont
     custom-pkgs.lmms-appimage
     custom-pkgs.mako-sound
+    mpd
+    mpc
     fontconfig
     noto-fonts
     noto-fonts-cjk-sans

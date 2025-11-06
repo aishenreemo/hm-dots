@@ -38,6 +38,7 @@
         ./mako.nix
         ./tmux.nix
         ./fastfetch.nix
+        ./mpd.nix
       ];
 
       extraSpecialArgs = {
