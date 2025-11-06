@@ -15,7 +15,6 @@
     wlroots
     nixgl
     waybar
-    alacritty
     wofi
     mako
     libnotify
@@ -37,6 +36,26 @@
   ];
 
   fonts.fontconfig.enable = true;
+  fonts.fontconfig.configFile = {
+    "10-kosefont" = {
+      enable = true;
+      text = ''
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <fontconfig>
+          <match target="scan">
+            <test name="family">
+              <string>KosefontJP Nerd Font</string>
+            </test>
+            <edit name="spacing" mode="assign">
+              <int>100</int>
+            </edit>
+          </match>
+        </fontconfig>
+      '';
+    };
+  };
+
   home.file.".icons/default".source = "${pkgs.vanilla-dmz}/share/icons/Vanilla-DMZ";
   home.file.".config/user-dirs.dirs".text = ''
     XDG_DOWNLOAD_DIR="$HOME/downloads"

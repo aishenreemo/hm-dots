@@ -30,7 +30,7 @@
       modules = [ 
         ./fish.nix
         ./home.nix 
-        ./alacritty.nix
+        ./kitty.nix
         ./firefox.nix
         ./waybar.nix
         ./hyprland.nix

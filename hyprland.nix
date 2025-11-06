@@ -1,7 +1,7 @@
 { ... }: {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
-    "$terminal" = "nixGL alacritty";
+    "$terminal" = "nixGL kitty";
     "$menu" = ''pgrep -x "wofi" > /dev/null || wofi --show drun --allow-images --no-actions'';
     "exec-once" = [
       "mako"
