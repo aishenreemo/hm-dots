@@ -22,7 +22,7 @@
     grim
     slurp
     pass-wayland
-    fastfetch
+    imagemagick
     custom-pkgs.kosefont
     custom-pkgs.lmms-appimage
     custom-pkgs.mako-sound
