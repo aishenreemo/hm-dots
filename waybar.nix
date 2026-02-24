@@ -3,7 +3,7 @@
   programs.waybar.settings.main = {
     "modules-left" = ["custom/menu" "user" "clock" "hyprland/workspaces"];
     "modules-right" = ["hyprland/window" "tray"];
-    "modules-center" = ["network" "bluetooth" "pulseaudio" "cpu" "memory" "disk"];
+    "modules-center" = ["network" "bluetooth" "pulseaudio" "cpu" "memory" "disk" "battery"];
     "custom/menu" = {
       "format" = "󰋜";
       "on-click" = "pgrep -x 'wofi' > /dev/null || wofi --show drun --allow-images --no-actions";
@@ -118,6 +118,25 @@
       "format" = "  {percentage_used}%";
       "path" = "/";
     };
+
+    "battery" = {
+      "bat" = "BAT0";
+      "adapter" = "ADP1";
+      "interval" = 2;
+      "states" = {
+        "warning" = 30;
+        "critical" = 15;
+      };
+      "events" = {
+        "on-discharging-warning" = "notify-send -u normal 'Low Battery'";
+        "on-discharging-critical" = "notify-send -u critical 'Very Low Battery'";
+        "on-charging-100" = "notify-send -u normal 'Battery Full!'";
+      };
+      "format" = "{capacity}% {icon}";
+      "format-charging" = "{capacity}% {icon} 󰄿";
+      "format-icons" = ["" "" "" "" ""];
+      "max-length" = 25;
+  };
 
     "bluetooth" = {
       "format" = " {status}";
