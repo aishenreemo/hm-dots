@@ -2,6 +2,7 @@
   pkgs,
   nixgl,
   custom-pkgs,
+  lib,
   ...
 }: {
   home.username = "aivan";
@@ -37,6 +38,7 @@
   ];
 
   fonts.fontconfig.enable = true;
+  xdg.portal.enable = lib.mkForce false;
   xdg.configFile."fontconfig/conf.d/10-kosefont.conf".text = ''
   <?xml version="1.0"?>
   <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
